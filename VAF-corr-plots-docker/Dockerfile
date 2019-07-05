@@ -16,7 +16,7 @@ RUN git clone https://github.com/marislab/create-pptc-pdx-corplots.git
 
 # Install all the software needed to run the pipeline
 RUN apt-get -y upgrade
-RUN apt install -y python3-pip
+RUN apt install -y python3-pip python3.6
 ONBUILD COPY requirements.txt /home/user/
 ONBUILD RUN pip install --no-cache-dir -r requirements.txt
 #RUN pip3 install -r requirements.txt
