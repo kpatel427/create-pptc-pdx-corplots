@@ -11,7 +11,7 @@ MAINTAINER Khushbu Patel <patelk26@email.chop.edu>
 
 # clone the most recent version of the pipeline
 WORKDIR /home/user/
-  RUN git clone https://github.research.chop.edu/patelk26/VAF-corr-docker.git
+  RUN git clone https://github.com/kpatel427/create-pptc-pdx-corplots.git
 
 
 # Install all the software needed to run the pipeline
