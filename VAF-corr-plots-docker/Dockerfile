@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-FROM python:3.6
+FROM python:3.7
 FROM r-base
 
 CMD source ~/.bashrc
@@ -16,7 +16,7 @@ RUN git clone https://github.com/marislab/create-pptc-pdx-corplots.git
 
 # Install all the software needed to run the pipeline
 RUN apt-get -y upgrade
-RUN apt install -y python3-pip python3.6
+RUN apt install -y python3-pip python3.7
 RUN pip3 install -r requirements.txt
 #ONBUILD COPY requirements.txt /home/user/
 #ONBUILD RUN pip install --no-cache-dir -r requirements.txt
