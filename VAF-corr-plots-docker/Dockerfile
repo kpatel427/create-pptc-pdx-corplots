@@ -17,8 +17,9 @@ RUN git clone https://github.com/marislab/create-pptc-pdx-corplots.git
 # Install all the software needed to run the pipeline
 RUN apt-get -y upgrade
 RUN apt install -y python3-pip python3.6
-ONBUILD COPY requirements.txt /home/user/
-ONBUILD RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install -r requirements.txt
+#ONBUILD COPY requirements.txt /home/user/
+#ONBUILD RUN pip install --no-cache-dir -r requirements.txt
 #RUN pip3 install -r requirements.txt
 ARG PANDAS_VERSION=0.23.0
 RUN pip3 install pandas==${PANDAS_VERSION}
@@ -29,5 +30,5 @@ WORKDIR /home/user/create-pptc-pdx-corplots/VAF-corr-plots-docker
 
 
 # Executing scripts
-#RUN [ "/usr/bin/bash", "/home/user/create-pptc-pdx-corplots/VAF-corr-plots-docker/pipeline.sh" ]
-ENTRYPOINT /home/user/create-pptc-pdx-corplots/VAF-corr-plots-docker/pipeline.sh
+RUN [ "/usr/bin/bash", "/home/user/create-pptc-pdx-corplots/VAF-corr-plots-docker/pipeline.sh" ]
+#ENTRYPOINT /home/user/create-pptc-pdx-corplots/VAF-corr-plots-docker/pipeline.sh
