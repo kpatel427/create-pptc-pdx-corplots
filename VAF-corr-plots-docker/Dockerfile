@@ -16,7 +16,7 @@ WORKDIR /home/user/
 
 # Install all the software needed to run the pipeline
 #RUN apt-get install -qqy python3-setuptools python3-docutils python3-flask python3.6 python-pip
-RUN apt-get install -qqy python3-docutils python3.6 python-pip
+RUN apt-get install -qqy python3.6 python-pip
 RUN pip install --upgrade pip && \
 pip install --no-cache-dir pandas
 
