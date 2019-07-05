@@ -26,8 +26,8 @@ WORKDIR /home/user/VAF-corr-docker
 
 
 # Executing scripts
-RUN [ "/usr/bin/bash", "/home/user/VAF-corr-docker/pipeline.sh" ]
-
+#RUN [ "/usr/bin/bash", "/home/user/VAF-corr-docker/pipeline.sh" ]
+CMD /home/user/VAF-corr-docker/pipeline.sh
 
 
 
