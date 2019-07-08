@@ -17,7 +17,7 @@ for x in dx_rel_files:
     df.fillna(0, inplace = True)
 
     # pivot table using protein change as index
-    new_df = pd.pivot_table(df,index = ['Protein_Change','Hugo_Symbol'],columns = ['Phase'],values = 'VAF').reset_index().rename_axis(None,1)
+    new_df = pd.pivot_table(df,index = ['Protein_Change','Hugo_Symbol'],columns = ['Phase'],values = 'VAF').reset_index().rename_axis(None, axis=1)
 
     new_df.fillna(0, inplace = True)
 
@@ -60,7 +60,7 @@ for x in same_phase_files:
 
 
         # pivot table using protein change as index
-        new_df = pd.pivot_table(df,index = ['Protein_Change','Hugo_Symbol'],columns = ['Phase'],values = 'VAF').reset_index().rename_axis(None,1)
+        new_df = pd.pivot_table(df,index = ['Protein_Change','Hugo_Symbol'],columns = ['Phase'],values = 'VAF').reset_index().rename_axis(None, axis=1)
 
         new_df.fillna(0, inplace = True)
 
@@ -103,7 +103,7 @@ for x in same_phase_files:
         df.fillna(0, inplace = True)
         
         # pivot table using protein change as index
-        new_df = pd.pivot_table(df,index = ['Protein_Change','Hugo_Symbol'],columns = ['Phase'],values = 'VAF').reset_index().rename_axis(None,1)
+        new_df = pd.pivot_table(df,index = ['Protein_Change','Hugo_Symbol'],columns = ['Phase'],values = 'VAF').reset_index().rename_axis(None, axis=1)
 
         new_df.fillna(0, inplace = True)
 
