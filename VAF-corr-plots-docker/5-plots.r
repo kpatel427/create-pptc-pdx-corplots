@@ -24,7 +24,12 @@ if(!require(ggpubr)){
   install.packages("ggpubr", repos='http://cran.us.r-project.org')
 }
 
-
+library(ggplot2)
+library(ggbeeswarm)
+library(gghighlight)
+library(ggrepel)
+library(ggthemes)
+library(ggpubr)
 
 #pptc.folder <- "~/Box Sync/PPTC-genomics-collaboration/"
 #source(paste0(pptc.folder, "Manuscript/scripts/theme.R"))
