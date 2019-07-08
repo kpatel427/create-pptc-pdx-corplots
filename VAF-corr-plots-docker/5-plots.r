@@ -1,6 +1,8 @@
 # .libPaths("/Users/patelk26/anaconda3/lib/R/library") # Change lib paths according to your Terminal lib path, that's where all the packages associated with the script will be installed.
 set.seed(12345)
 
+source("./demog-color-function.R")
+
 # Checking for required packages, if not found, will be installed
 
 if(!require(ggplot2)){
@@ -24,11 +26,17 @@ if(!require(ggpubr)){
 
 
 
-pptc.folder <- "~/Box Sync/PPTC-genomics-collaboration/"
-source(paste0(pptc.folder, "Manuscript/scripts/theme.R"))
+#pptc.folder <- "~/Box Sync/PPTC-genomics-collaboration/"
+#source(paste0(pptc.folder, "Manuscript/scripts/theme.R"))
+
+pptc.folder <- "/home/user/create-pptc-pdx-corplots/VAF-corr-plots-docker/"
+data.folder <- "/home/user/create-pptc-pdx-corplots/VAF-corr-plots-docker/data/"
+
+source(paste0(pptc.folder,"theme.R"))
 
 # To Fetch Histologies from Histology.Detailed column 
-df_hist <- read.table("~/Box Sync/PPTC-genomics-collaboration/Data/clinical/2019-06-21-pdx-clinical-final-for-paper.txt", sep = "\t", header = T)
+#df_hist <- read.table("~/Box Sync/PPTC-genomics-collaboration/Data/clinical/2019-06-21-pdx-clinical-final-for-paper.txt", sep = "\t", header = T)
+df_hist <- read.table(paste0(data.folder,"pptc-pdx-clinical-web.txt"), sep = "\t", header = T)
 
 
 # Storing all Dx-Relapse Sample pairs in a list so each file can be processed iteratively
